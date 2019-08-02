@@ -10,6 +10,7 @@ const { errorHandler } = require('./validators');
 const folderRouter = require('./folders/folders-router');
 const noteRouter = require('./notes/notes-router');
 
+
 const app = express();
 
 const morganOption = (NODE_ENV === 'production')

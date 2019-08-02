@@ -41,7 +41,7 @@ notesRouter.route('/')
 
     newNote.content = content;
 
-    NotesService.insertUser(knexInstance, newNote)
+    NotesService.insertNote(knexInstance, newNote)
       .then(note =>{
         res
           .status(201)
@@ -59,7 +59,7 @@ notesRouter.route('/:note_id')
       .then(note =>{
         if(!note){
           return res.status(404).json({
-            error: { message: `User doesn't exist`}
+            error: { message: `Note doesn't exist`}
           });
         }
         res.note = note;

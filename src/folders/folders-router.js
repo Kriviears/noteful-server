@@ -34,7 +34,7 @@ folderRouter.route('/')
       });
     }
 
-    FoldersService.insertUser(knexInstance, newFolder)
+    FoldersService.insertFolder(knexInstance, newFolder)
       .then(folder =>{
         res
           .status(201)
@@ -52,7 +52,7 @@ folderRouter.route('/:folder_id')
       .then(folder =>{
         if(!folder){
           return res.status(404).json({
-            error: { message: `User doesn't exist`}
+            error: { message: `Folder doesn't exist`}
           });
         }
         res.folder = folder;
