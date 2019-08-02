@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "Noteful-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,11 @@
     "test": "mocha --require test/setup.js",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
+    "migrate": "postgrator --config postgrator-config.js",
     "predeploy": "npm audit",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "seed-notes": "psql -U postgres -d noteful -f ./seeds/seed.noteful_notes.sql",
+    "seed-folders": "psql -U postgres -d noteful -f ./seeds/seed.noteful_folders.sql"
   },
   "keywords": [],
   "author": "",
@@ -18,12 +21,16 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "helmet": "^3.18.0",
-    "morgan": "^1.9.1"
+    "knex": "^0.19.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.11.0",
+    "xss": "^1.0.6"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
+    "postgrator-cli": "^3.1.0",
     "supertest": "^4.0.2"
   }
 }
