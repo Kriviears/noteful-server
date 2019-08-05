@@ -24,7 +24,7 @@ app.use(cors());
 
 
 app.get('/', (req, res)=>{
-  res.send('Hello boilerplate!');
+  res.send('Noteful app');
 });
 
 app.use('/api/notes', noteRouter);
