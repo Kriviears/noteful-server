@@ -27,8 +27,8 @@ app.get('/', (req, res)=>{
   res.send('Noteful app');
 });
 
-app.use('/api/notes', noteRouter);
-app.use('/api/folders', folderRouter);
+app.use('/notes', noteRouter);
+app.use('/folders', folderRouter);
 
 app.use(errorHandler);
 
